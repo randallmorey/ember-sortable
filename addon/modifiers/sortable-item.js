@@ -268,8 +268,8 @@ export default class SortableItemModifier extends Modifier {
 
     let handle = this.handle;
 
-    // todo what does this do? why do you have to null handle
-    if (!this.handleElement && !startEvent.target.closest(handle)) {
+    // Quit immediately if the event didn't start on the drag handle
+    if (!startEvent.target.closest(handle)) {
       return;
     }
 
